@@ -4,50 +4,31 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Migraciones - Profesores, estudiantes, categorías, niveles y cursos</strong></h2>
+<h2>Commit - <strong>Migraciones - Reseñas, requisitos y metas, Relaciones muchos a muchos</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Creación del modelo Teacher con su migración(edición) y su factoría
-    <pre>php artisan make:model Teacher -mf</pre>
+    Creación del modelo Review con su migración(edición) y su factoría
+    <pre>php artisan make:model Review -mf</pre>
   </li>
   <li>
-    Implementar las migraciones borrando y creando todas
+    Creación y edición de la migración (tabla pivote) que
+    tendrá la relación muchos a muchos (muchos cursos tendrán muchos estudiantes)
+    <pre>php artisan make:migration create_table_course_student</pre>
+  </li>
+  <li>
+    Creación del modelo Requirement con su migración(edición) y su factoría
+    <pre>php artisan make:model Requirement -mf</pre>
+  </li>
+  <li>
+    Creación del modelo Goal con su migración(edición) y su factoría
+    <pre>php artisan make:model Goal -mf</pre>
+  </li>
+  <li>
+    Implementar las migraciones borrando todo y recreando todo de nuevo
     <pre>php artisan migrate:fresh</pre>
-  </li>
-  <li>
-    Creación del modelo Student con su migración(edición) y su factoría
-    <pre>php artisan make:model Student -mf</pre>
-  </li>
-  <li>
-    Implementar las migraciones borrando y creando todas
-    <pre>php artisan migrate:fresh</pre>
-  </li>
-  <li>
-    Creación del modelo Level con su migración(edición) y su factoría
-    <pre>php artisan make:model Level -mf</pre>
-  </li>
-  <li>
-    Implementar las migraciones solo agregando la nueva migración
-    <pre>php artisan migrate</pre>
-  </li>
-  <li>
-    Creación del modelo Category con su migración(edición) y su factoría
-    <pre>php artisan make:model Category -mf</pre>
-  </li>
-  <li>
-    Implementar las migraciones solo agregando la nueva migración
-    <pre>php artisan migrate</pre>
-  </li>
-  <li>
-    Creación del modelo(edición) Course con su migración(edición) y su factoría
-    <pre>php artisan make:model Course -mf</pre>
-  </li>
-  <li>
-    Implementar las migraciones solo agregando la nueva migración
-    <pre>php artisan migrate</pre>
   </li>
 </ol>
 <!-- End Commit instructions -->
