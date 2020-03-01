@@ -4,39 +4,40 @@
   <!-- End Title -->
 
   <!-- Commit name -->
-  <h2>Commit - <strong>Instalación de dependencias de PHP</strong></h2>
+  <h2>Commit - <strong>Migraciones - Usuarios, roles, suscripciones y socialite</strong></h2>
   <!-- End Commit name -->
   
   <!-- Commit instructions -->
   <ol>
      <li>
-        Instalar Intervention Image
-        <pre>composer require intervention/image</pre>
+        Creación del modelo role(edición) y su factoría
+        <pre>php artisan make:model Role -f</pre>
+        Edición del modelo Role.php
     </li>
     <li>
-      Instalar Debugbar
-      <pre>composer require barryvdh/laravel-debugbar --dev</pre>
+      Edición de la migración create_users_table
+      <br>
+      <em>*Las migraciones (usuarios, roles, suscripciones y socialite) se crean en la migración create_users_table</em>
     </li>
     <li>
-      Instalar Cashier
-      <pre>composer require "laravel/cashier":"~7.0"</pre>
+      Creación de la Base de Datos cursosOnline_laravel56_Udemy desde la consola de laragon
+      <pre>mysql -u root</pre>
+      <pre>create database cursosOnline_laravel56_Udemy</pre>
     </li>
     <li>
-      Instalar Socialite
-      <pre>composer require laravel/socialite "^3.2.0"</pre>
+      Edición del archivo .env
+      <br>
+      <code>DB_DATABASE=cursosOnline_laravel56_Udemy</code>
+      <br>
+      <code>DB_USERNAME=root</code>
+      <br>
+      <code>DB_PASSWORD=</code>
     </li>
     <li>
-      Instalar Laravel-Datatables
-      <pre>$ composer require yajra/laravel-datatables-oracle:"~8.4"</pre>
-      <ul>
-        <li>
-          Edición del archivo config/app.php
-          <br>
-          <em>*Se agrega el alias de datatables</em>
-          <br>
-          <code>'DataTables' => Yajra\DataTables\Facades\DataTables::class,</code>
-        </li>
-      </ul>
+      Implementar las migraciones
+      <pre>php artisan migrate</pre>
+      Implementar las migraciones borrando todo y volviendolo a implementar
+      <pre>php artisan migrate:fresh</pre>
     </li>
   </ol>
   <!-- End Commit instructions -->
@@ -44,34 +45,8 @@
   <!-- Notes -->
   <h3>Notas:</h3>
   <ul>
-     <li>
-        Intervention Image: Librería que permite agregar imágenes a los registros en la Base de Datos
-        <pre><a href="http://image.intervention.io/">Ir a Intervention Image</a></pre>
-      </li>
-     <li>
-        Debugbar: Librería que permite tener un mejor control sobre la aplicación
-        <pre><a href="https://github.com/barryvdh/laravel-debugbar">Ir a DebugBar</a></pre>
-        <em>*Permite ver las consultas a la Base de Datos</em>
-        <br>
-        <em>*Permite ver las sesiones</em>
-        <br>
-        <em>*Permite ver las rutas</em>
-        <br>
-      </li>
-      <li>
-        Cashier: Librería que permite hacer pagos con Stripe o Braintree's desde tu aplicación
-        <pre><a href="https://laravel.com/docs/5.6/billing">Ir a Cashier</a></pre>
-      </li>
-      <li>
-        Socialite: Librería que permite iniciar sesión con Facebook, Twitter, Google, Github y Gitbucket
-        <pre><a href="https://laravel.com/docs/5.6/socialite">Ir a Socialite</a></pre>
-      </li>
-      <li>
-        Laravel-Datatables: Librería con una tabla de datos usando ajax 
-        <pre><a href="https://github.com/yajra/laravel-datatables">Ir a Laravel-Datatables(Github)</a></pre>
-        <pre><a href="https://yajrabox.com/docs/laravel-datatables/master">Ir a Laravel-Datatables(Sitio oficial)</a></pre>
-      </li>
+
   </ul>
     
-  <em><b>*A partir de la versión 5.7 de Laravel ya está disponible Laravel Telescope que es más completo que Debugbar</b></em>
+  <em>*Más información en la migración create_users_table</em>
   <!-- End notes -->
