@@ -4,31 +4,28 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>PHP IDE Helper</strong></h2>
+<h2>Commit - <strong>Instalar y configurar idiomas adicionales para nuestra aplicación</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Instalación de la librería Laravel IDE Helper
-    <pre>composer require --dev barryvdh/laravel-ide-helper</pre>
+    Instalación de la librería Laravel Lang
+    <pre>composer require caouecs/laravel-lang:~3.0</pre>
     <ul>
       <li>
-        Usar el comando que genera los comentarios sobre la documentación de las Facades de laravel
-        <pre>php artisan ide-helper:generate</pre>
-      </li>
-      <li>
-        Usar el comando que genera los comentarios sobre la documentación de los modelos de laravel
-        <pre>php artisan ide-helper:models</pre>
-        <em>*Si pregunta poner "yes" en la consola</em>
+        <code>Copiar la carpeta vendor/caouecs/src/es</code>
         <br>
-        <em>*Este comando edita todos los modelos existentes</em>
-      </li>
-      <li>
-        Hay un tercer comando pero solo es para el editor de código PHPStorm (PhpStorm Meta file)
-        <pre>php artisan ide-helper:meta</pre>
+        y pegar en
+        <br>
+        <code>resources/lang/</code>
       </li>
     </ul>
+  </li>
+  <li>
+    Edición del archivo config/app.php
+    <br>
+    <code>'locale' => 'es',</code>
   </li>
 </ol>
 <!-- End Commit instructions -->
@@ -36,8 +33,11 @@
 <!-- Notes -->
 <h3>Notas:</h3>
 <ul>
-  Laravel IDE Helper es una librería que ayuda con la documentación de las clases dentro del proyecto de laravel
-  <pre><a href="https://github.com/barryvdh/laravel-ide-helper">Ir a IDE Helper</a></pre>
+  <li>
+    Laravel Lang es una librería para traducir todos los mensajes que laravel tiene
+    pero que por defecto solo tiene en Inglés
+    <pre><a href="https://github.com/caouecs/Laravel-lang">Ir a Laravel Lang</a></pre>
+  </li>
 </ul>
 
 <em></em>
