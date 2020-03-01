@@ -4,31 +4,31 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Migraciones - Reseñas, requisitos y metas, Relaciones muchos a muchos</strong></h2>
+<h2>Commit - <strong>PHP IDE Helper</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Creación del modelo Review con su migración(edición) y su factoría
-    <pre>php artisan make:model Review -mf</pre>
-  </li>
-  <li>
-    Creación y edición de la migración (tabla pivote) que
-    tendrá la relación muchos a muchos (muchos cursos tendrán muchos estudiantes)
-    <pre>php artisan make:migration create_table_course_student</pre>
-  </li>
-  <li>
-    Creación del modelo Requirement con su migración(edición) y su factoría
-    <pre>php artisan make:model Requirement -mf</pre>
-  </li>
-  <li>
-    Creación del modelo Goal con su migración(edición) y su factoría
-    <pre>php artisan make:model Goal -mf</pre>
-  </li>
-  <li>
-    Implementar las migraciones borrando todo y recreando todo de nuevo
-    <pre>php artisan migrate:fresh</pre>
+    Instalación de la librería Laravel IDE Helper
+    <pre>composer require --dev barryvdh/laravel-ide-helper</pre>
+    <ul>
+      <li>
+        Usar el comando que genera los comentarios sobre la documentación de las Facades de laravel
+        <pre>php artisan ide-helper:generate</pre>
+      </li>
+      <li>
+        Usar el comando que genera los comentarios sobre la documentación de los modelos de laravel
+        <pre>php artisan ide-helper:models</pre>
+        <em>*Si pregunta poner "yes" en la consola</em>
+        <br>
+        <em>*Este comando edita todos los modelos existentes</em>
+      </li>
+      <li>
+        Hay un tercer comando pero solo es para el editor de código PHPStorm (PhpStorm Meta file)
+        <pre>php artisan ide-helper:meta</pre>
+      </li>
+    </ul>
   </li>
 </ol>
 <!-- End Commit instructions -->
@@ -36,7 +36,8 @@
 <!-- Notes -->
 <h3>Notas:</h3>
 <ul>
-
+  Laravel IDE Helper es una librería que ayuda con la documentación de las clases dentro del proyecto de laravel
+  <pre><a href="https://github.com/barryvdh/laravel-ide-helper">Ir a IDE Helper</a></pre>
 </ul>
 
 <em></em>
