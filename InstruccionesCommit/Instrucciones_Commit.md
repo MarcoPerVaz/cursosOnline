@@ -4,83 +4,59 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Crear APPs para el inicio de sesión con Facebook y Github</strong></h2>
+<h2>Commit - <strong>Crear APPs para el inicio de sesión con Google</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
-  <!-- API Facebook -->
-  <h3>Facebook</h3>
+  <!-- API Googlr -->
+  <h3>Google</h3>
   <ol>
     <li>
-      Iniciar sesión en Facebook Developers: 
-      <pre><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fdevelopers.facebook.com%2F%3Fno_redirect%3D1">Ir a Facebook developers</a></pre>
-      <em>*Iniciar sesión con tu cuenta de Facebook o crear una nueva</em>
+      Iniciar sesión en Google Developers: 
+      <pre><a href="https://accounts.google.com/signin/v2/identifier?sacu=1&continue=https%3A%2F%2Fconsole.developers.google.com%2Fcloud-resource-manager%3Fpli%3D1&followup=https%3A%2F%2Fconsole.developers.google.com%2Fcloud-resource-manager%3Fpli%3D1&osid=1&service=cloudconsole&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Ir a Google developers</a></pre>
+      <em>*Iniciar sesión con tu cuenta de Google o crear una nueva</em>
     </li>
     <li>
-      Crea una nueva App
+      Click en CREATE PROJECT
     </li>
     <li>
       Asignar nombre
       <br>
-      <code>Cursos Online con Laravel 5.6</code>
+      <code>CursosOnline</code>
     </li>
-    <li>Asignar email de contacto</li>
-    <li>Click en Configurar Inicio de sesión con Facebook</li>
-    <li>Click en Configuración en el panel inferior izquierdo</li>
+    <li>Click en Crear</li>
+    <li>Desde el buscador poner <code>google+ api</code></li>
+    <li>Click en Habilitar</li>
+    <li>Click en Configurar pantalla de consentimiento</li>
+    <li>Seleccionar Externo y click en Crear</li>
     <li>
-      Colocar en el campo URI de redireccionamiento de OAuth válidos
-      <br>
-      <code>https://cursosonline.it/login/facebook/callback</code>
-      <br>
-      <em>*Tener en cuenta el nombre del Host virtual y su dominio</em>
-    </li>
-    <li>Click en Guardar cambios</li>
-    <li>Click en Configuración de la parte superior izquierda</li>
-    <li>
-      Click en Básica
-      <br>
-      <em>*Ahí es donde se muestran las credenciales de la API de Facebook</em>
-    </li>
-  </ol>
-
-  <!-- API Github -->
-  <h3>GitHub</h3>
-  <ol>
-    <li>
-      Iniciar sesión en Github: 
-      <pre><a href="https://github.com/">Ir a Github</a></pre>
-      <em>*Iniciar sesión con tu cuenta de Github o crear una nueva</em>
-    </li>
-    <li>Click en la imagen de perfil en la parte posterior derecha</li>
-    <li>Click en Settings</li>
-    <li>Click en Developer settings</li>
-    <li>
-      Click en New GitHub App
-      <br>
-      <em>*Si aparece lo de confirm password, ingresarlo</em>
-    </li>
-    <li>
-      Asignar nombre de la aplicación
+      Nombre de la aplicación
       <br>
       <code>Cursos Online con Laravel 5.6</code>
     </li>
     <li>
-      Asignar User authorization callback URL
+      Dominios autorizados
       <br>
-      <code>https://cursosonline.it/login/github/callback</code>
+      <code>cursosonline.it</code>
       <br>
-      <em>*Tener en cuenta el nombre del Host virtual y su dominio</em>
+      <em>*Darle enter para agregarlo</em>
+    </li>
+    <li>Click en Credenciales</li>
+    <li>Click en + CREAR CREDENCIALES</li>
+    <li>Click en ID de cliente de OAuth</li>
+    <li>Seleccionar web y click en Crear</li>
+    <li>
+      Nombre
+      <br>
+      <code>Cliente web 1</code>
     </li>
     <li>
-      Asignar Homepage URL
+      En URIs de redirección autorizados
       <br>
-      <code>https://cursosonline.it</code>
+      <code>https://cursosonline.it/login/google/callback</code>
     </li>
-    <li>
-      Click en Create GitHub App
-      <br>
-      <em>*Ahí es donde se muestran las credenciales de la API de GitHub</em>
-    </li>
+    <li>Click en Crear</li>
+    <li>Se muestran las credenciales</li>
   </ol>
 
   <!-- Proyecto Cursos Online con laravel 5.6 -->
@@ -89,21 +65,16 @@
     <li>
       Edición del archivo config/services.php
       <br>
-      <em>*Se registran las configuraciones de Socialite de las 2 API's</em>
+      <em>*Se registran las configuraciones de Socialite de la API</em>
     </li>
     <li>
       Edición del archivo .env
       <br>
-          <em>*Se agregan las configuraciones para Socialite dependiendo las llaves de la API</em>
-          <br>
-          <code>GITHUB_CLIENT_ID=</code>
-          <br>
-          <code>GITHUB_CLIENT_SECRET=</code>
-          <br>
-          <br>
-          <code>FACEBOOK_CLIENT_ID=</code>
-          <br>
-          <code>FACEBOOK_CLIENT_SECRET=</code>
+      <em>*Se agregan las configuraciones para Socialite dependiendo las llaves de la API</em>
+      <br>
+      <code>GOOGLE_CLIENT_ID=</code>
+      <br>
+      <code>GOOGLE_CLIENT_SECRET=</code>
     </li>
   </ol>
 <!-- End Commit instructions -->
