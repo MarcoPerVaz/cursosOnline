@@ -24,5 +24,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Level extends Model
 {
-    //
+    /*  */
+        /* Relations */
+        public function course()
+        {
+            return $this->hasOne(Course::class);
+        }
+    /*  */
 }

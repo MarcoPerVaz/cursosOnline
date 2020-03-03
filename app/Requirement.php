@@ -24,5 +24,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Requirement extends Model
 {
-    //
+    /*  */
+        /* Relations */
+        public function course()
+        {
+            return $this->belongsTo(Course::class);
+        }
+    /*  */
 }

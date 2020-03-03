@@ -24,5 +24,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Goal extends Model
 {
-    //
+    /*  */
+        /* Relations */
+        public function course() {
+            return $this->belongsTo(Course::class);
+        }
+    /*  */
 }

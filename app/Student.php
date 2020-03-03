@@ -24,5 +24,19 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model
 {
-    //
+    /*  */
+        /* Relations */
+        public function courses() {
+            return $this->belongsToMany(Course::class);
+        }
+
+        public function user() {
+            return $this->belongsTo(User::class)->select('id', 'role_id', 'name', 'email');
+        }
+    /*  */
 }
+
+/* Notas
+    *Se pueden crear consultas desde las relaciones
+     *Con select solo obtendrá el id, role_id, name e email de la relación 
+*/

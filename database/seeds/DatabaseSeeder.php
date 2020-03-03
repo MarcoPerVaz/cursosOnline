@@ -51,6 +51,14 @@ class DatabaseSeeder extends Seeder
         factory(\App\Level::class, 1)->create(['name' => 'Intermediate']); /* Crea un nivel llamado Intermediate */
         factory(\App\Level::class, 1)->create(['name' => 'Advanced']); /* Crea un nivel llamado Advanced */
         factory(\App\Category::class, 5)->create(); /* Crea 3 categorías aleatorias */
+
+        factory(\App\Course::class, 50)->create()->each(function (\App\Course $c) {
+            $c->goals()->saveMany(factory(\App\Goal::class, 2)->create());
+            $c->requirements()->saveMany(factory(\App\Requirement::class, 4)->create());
+        });
+            /* Nota: Esta última factoría hace uso de las relaciones para crear 50 cursos y que cada curso tenga 2 metas
+                     y 4 requerimientos 
+            */
         /*  */
     }
 }
