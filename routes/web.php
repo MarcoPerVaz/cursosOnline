@@ -11,6 +11,10 @@
 |
 */
 
+/* Rutas Socialite */
+Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider')->name('social_auth');
+Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/', function () {
     return view('welcome');
 });

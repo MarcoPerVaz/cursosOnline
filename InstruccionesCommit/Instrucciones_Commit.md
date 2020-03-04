@@ -4,47 +4,41 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Sass, JS y Yarn, generando archivos que entiende el browser</strong></h2>
+<h2>Commit - <strong>Botones, rutas y lógica para iniciar el proceso de autenticación</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
   <ol>
+    <li>Edición de rutas en el archivo routes/web.php</li>
     <li>
-      Descargar Yarn
-      <pre><a href="https://classic.yarnpkg.com/en/docs/install#windows-stable">Descargar Yarn</a></pre>
-    </li>
-    <li>Seleccionar sistema operativo</li>
-    <li>Seleccionar versión de Yarn</li>
-    <li>Click en Download Installer</li>
-    <li>Instalar</li>
-    <li>Reiniciar el editor de código</li>
-    <li>
-      Comando para comprobar la versión de Yarn
-      <pre>yarn --version</pre>
+      Edición del controlador <code>app/Http/Controllers/Auth/LoginController</code>
+      <ul>
+        <li>Creación y edición de la función <code>redirectToProvider(string $driver)</code></li>
+      </ul>
     </li>
     <li>
-      Instalar las dependencias de Javascript con Yarn
-      <pre>yarn</pre>
-      <em>*Es similar a usar npm install</em>
+      Creación de la carpeta <code>resources/views/partials/</code>
+      <ul>
+        <li>
+          Creación la carpeta <code>/partials/auth/</code>
+          <ul>
+            <li>Creación y edición de la vista parcial <code>social_login.blade.php</code></li>
+          </ul>
+        </li>
+      </ul>
     </li>
-    <li>
-      Usar el comando
-      <pre>npm run dev</pre>
-      <em>*Compila solo una vez los archivos</em>
-      <pre>npm run watch</pre>
-      <em>*Compila cada vez que detecta cambios</em>
-    </li>
-    <li>Edición del archivo <code>resources/assets/sass/app.scss</code></li>
-    <li>Edición del archivo <code>resources/assets/sass/_variables.scss</code></li>
+    <li>Creación y edición del archivo <code>resources/lang/es.json</code></li>
+    <li>Creación y edición del archivo <code>resources/lang/en.json</code></li>
+    <li>Edición del archivo <code>resources/views/auth/login.blade.php</code></li>
+    <li>Edición del archivo <code>resources/views/layouts/app.blade.php</code></li>
+    <li>Edición del archivo <code>resources/views/auth/login.blade.php</code></li>
+    <li>Edición del archivo <code>resources/views/auth/register.blade.php</code></li>
   </ol>
 <!-- End Commit instructions -->
   <!-- Notes -->
   <h3>Notas:</h3>
   <ul>
-    <li>
-      Yarn es administrador de paquetes de PHP (parecido a npm)
-      <pre><a href="https://yarnpkg.com/">Ir a sitio oficial de Yarn</a></pre>
-    </li>
+   
   </ul>
 
   <em></em>
