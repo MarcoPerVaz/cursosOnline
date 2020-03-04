@@ -4,7 +4,7 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Controlar la cancelación de Inicio de sesión con facebook, Github y Google</strong></h2>
+<h2>Commit - <strong>Procesar registro e inicio de sesión con Socialite utilizando transacciones</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
@@ -24,5 +24,10 @@
    <li>El mensaje informativo de cancelar sesión solo se usa con facebook</li>
   </ul>
 
-  <em></em>
+  <em>*Más información en <code>app/Http/Controller/Auth/LoginController.php</code></em>
+  <br>
+  <em>
+    *Aquí hay un error con el campo slug de la tabla users ya que al crear los 
+     registros el campo slug no puede ser null (Se arregla más adelante)
+    </em>
   <!-- End notes -->
