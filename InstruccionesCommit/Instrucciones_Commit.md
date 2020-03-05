@@ -4,21 +4,22 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Sobreescribir el proceso de registro</strong></h2>
+<h2>Commit - <strong>Inicio navegación y desplegable para cambiar el idioma</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
+  <li>Creación y edición de la vista parcial <code>resources/views/partials/auth/navigation.blade.php</code></li>
+  <li>Edición de la vista <code>resources/views/layouts/app.blade.php</code></li>
   <li>
-    Edición del controlador <code>app/Http/Controllers/Auth/RegisterController</code>
+    Edición del archivo de rutas <code>routes/web.php</code>
+    <br>
+    <em>*Se agrego la ruta <code>/set_language({lang}</code></em>
+  </li>
+  <li>
+    Edición del controlador <code>app/Http/Controllers/Controller.php</code>
     <ul>
-      <li>Creación y edición de la función <code>protected function registered(Request $request, $user)</code></li>
-      <br>
-      <em>*No olvidar importar <code>use app\Student;</code></em>
-      <br>
-      <em>*No olvidar importar <code>use Illuminate\Http\Request;</code></em>
-      <br>
-      <em>*Esta función sobreescribe la función localizada en vendor (más información en Notas)</em>
+      <li>Creación de la función <code>setLanguage($language)</code></li>
     </ul>
   </li>
 </ol>
@@ -31,9 +32,6 @@
   </ul>
 
   <em>
-    *Se sobreescribe la función <code>protected function registered(Request $request, $user)</code> 
-     localizada en vendor/ y que no se debe modificar desde ahí
-    <br>
-    <code>\vendor\laravel\framework\src\Illuminate\Foundation\Auth\RegistersUsers.php</code>
+    
   </em>
   <!-- End notes -->
