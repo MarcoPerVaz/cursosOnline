@@ -4,22 +4,16 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Inicio navegación y desplegable para cambiar el idioma</strong></h2>
+<h2>Commit - <strong>Método para establecer una sesión y guardar el idioma seleccionado</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>Creación y edición de la vista parcial <code>resources/views/partials/auth/navigation.blade.php</code></li>
-  <li>Edición de la vista <code>resources/views/layouts/app.blade.php</code></li>
-  <li>
-    Edición del archivo de rutas <code>routes/web.php</code>
-    <br>
-    <em>*Se agrego la ruta <code>/set_language({lang}</code></em>
-  </li>
+  <li>Creación y edición del archivo <code>config/language.php</code></li>
   <li>
     Edición del controlador <code>app/Http/Controllers/Controller.php</code>
     <ul>
-      <li>Creación de la función <code>setLanguage($language)</code></li>
+      <li>Edición de la función <code>setLanguage($language)</code></li>
     </ul>
   </li>
 </ol>
@@ -31,7 +25,5 @@
     
   </ul>
 
-  <em>
-    
-  </em>
+  <em></em>
   <!-- End notes -->
