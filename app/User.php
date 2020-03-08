@@ -74,8 +74,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
 
     /*  */
+        /* Operación ternaria que obtiene el role del usuario logueado o si es invitado */
+        public static function navigation()
+        {
+            return auth()->check() ? auth()->user()->role->name : 'guest';
+        }
         /* Relations */
         public function role()
         {
