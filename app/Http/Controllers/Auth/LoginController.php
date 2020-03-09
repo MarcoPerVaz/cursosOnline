@@ -9,6 +9,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\User;
 use App\UserSocialAccount;
 use App\Student;
+use Illuminate\Http\Request;
 /*  */
 
 class LoginController extends Controller
@@ -44,6 +45,13 @@ class LoginController extends Controller
     }
 
     /*  */
+    public function logout(Request $request)
+    {
+        auth()->logout();
+        session()->flush(); /* Forzar el borrado de sesiones */
+        return redirect('/login');
+    }
+
     public function redirectToProvider(string $driver)
     {
         return Socialite::driver($driver)->redirect();

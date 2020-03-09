@@ -4,19 +4,17 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Navegación dinámica para usuarios invitados y admin</strong></h2>
+<h2>Commit - <strong>Sobreescribir el método Logout para cambiar la url cuando salimos de la app</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>Edición del modelo <code>app/User</code></li>
-  <li>Edición de la vista <code>resources/vies/partials/navigation.blade</code></li>
   <li>
-    Creación de la carpeta <code>resources/views/partials/navigations/</code>
+    Edición del controlador <code>app/Http/Controllers/Auth/LoginController.php</code>
     <ul>
-      <li>Creación y edición de la vista guest.blade.php</li>
-      <li>Creación y edición de la vista admin.blade.php</li>
-      <li>Creación y edición de la vista logged.blade.php</li>
+      <li>Creación y edición de la función <code>logout()</code></li>
+      <br>
+      <em>*No olvidar importar la clase <code>use Illuminate\Http\Request;</code></em>
     </ul>
   </li>
 </ol>
