@@ -4,18 +4,20 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Obtener los cursos paginados con el total de estudiantes y otras relaciones</strong></h2>
+<h2>Commit - <strong>Inicializar template para mostrar los cursos paginados</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
+  <li>Creación y edición del archivo <code>resources/assets/sass/card.scss</code></li>
+  <li>Edición del archivo <code>resources/assets/sass/app.scss</code></li>
   <li>
-    Edición del controlador <code>app/Http/Controllers/HomeController</code>
-    <ul>
-      <li>Edición de la función <code>index()</code></li>
-      <em>*No olvidar importar la clase <code>use App\Course;</code></em>
-    </ul>
+    Ejecutar comando
+    <pre>npm run dev</pre>
+    o
+    <pre>npm run watch</pre>
   </li>
+  <li>Edición de la vista <code>resources/views/home.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
