@@ -82,10 +82,28 @@ class Course extends Model
         public function teacher() {
             return $this->belongsTo(Teacher::class);
         }
+
+        /* Atributo personalizado */
+        public function getRatingAttribute()
+        {
+            return $this->reviews->avg('rating');
+        }
+        /* Desde la vista sería $course->rating */
+
+        public function getCustomRatingAttribute()
+        {
+            return $this->reviews->avg('rating');
+        }
+        /* Desde la vista sería $course->custom_rating
+           ó
+           Desde la vista sería $course->customRating 
+        */
     /*  */
 }
 
 /* Notas
     *Se pueden crear consultas desde las relaciones
      *Con select solo obtendrá el id y name de la relación 
+    *Atributo personalizado permite cambiar una colección de datos
+      *En este caso sacar el promedio (avg - average) al atributo rating
 */

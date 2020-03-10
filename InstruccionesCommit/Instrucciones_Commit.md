@@ -4,20 +4,16 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Ruta para mostrar las imágenes almacenadas en Storage con un enlace simbólico</strong></h2>
+<h2>Commit - <strong>Parcial para mostrar el rating de los cursos y atributos personalizados Eloquent</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Edición del archivo de rutas <code>routes/web.php</code>
-    <br>
-    <em>*No olvidar importar la clase <code>use Intervention\Image\Facades\Image;</code></em>
+    Creación y edición de la vista parcial <code>resources/views/partials/courses/rating.blade.php</code>
   </li>
-  <li>
-    Comando para usar un enlace simbólico de <code>public/</code> a <code>storage/</code>
-    <pre>php artisan storage:link</pre>
-  </li>
+  <li>Edición de la vista parcial <code>resources/views/partials/courses/card_course.blade.php</code></li>
+  <li>Edición del modelo <code>App/Course</code></li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -27,5 +23,5 @@
     
   </ul>
 
-  <em></em>
+  <em>*Más información en <code>app/Course.php</code></em>
   <!-- End notes -->
