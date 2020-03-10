@@ -49,6 +49,11 @@ class Course extends Model
     /*  */
 
     /*  */
+        /*  */
+        public function pathAttachment()
+        {
+            return "/images/courses/" . $this->picture; /* con $this se devuelve la instancia del modelo Course */
+        }
         /* Relations */
         public function category() {
             return $this->belongsTo(Category::class)->select('id', 'name');
