@@ -4,7 +4,7 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Ruta detalle de un curso y controlador CourseController y Route Model Binding</strong></h2>
+<h2>Commit - <strong>Obtener el detalle de un curso con sus relaciones, diferencia entre WITH y LOAD</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
@@ -24,6 +24,9 @@
     <br>
     <em>*Se hace uso de Model Binding para usar el slug en lugar del id en la url</em>
   </li>
+  <li>
+    Edición del modelo <code>app/Review.php</code>
+  </li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -33,5 +36,5 @@
     
   </ul>
 
-  <em></em>
+  <em>*Más información en <code>app/Http/Controllers/CourseController</code> (Diferencia entre Load y With</em>
   <!-- End notes -->
