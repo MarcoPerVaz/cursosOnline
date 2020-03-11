@@ -54,6 +54,13 @@ class Course extends Model
         {
             return "/images/courses/" . $this->picture; /* con $this se devuelve la instancia del modelo Course */
         }
+
+        /* Model Binding */
+        public function getRouteKeyName()
+        {
+            return 'slug';
+        }
+        /*  */
         /* Relations */
         public function category() {
             return $this->belongsTo(Category::class)->select('id', 'name');

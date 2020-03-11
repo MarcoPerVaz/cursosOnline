@@ -4,23 +4,26 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Cabecera dinámica con ícono de FA para mostrar la información de cada sección</strong></h2>
+<h2>Commit - <strong>Ruta detalle de un curso y controlador CourseController y Route Model Binding</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Creación y edición de la vista parcial <code>resources/views/partials/jumbotron.blade.php</code>
+    Creación y edición del controlador <code>app/Http/Controllers/CourseController</code>
+    <pre>php artisan make:controller CourseController</pre>
+    <em>*No olvidar importar el modelo <code>use App\Course;</code></em>
   </li>
   <li>
-    Creación de la carpeta <code>public/images/</code>
-    <ul>
-      <li>Copiar la imagen incluida en el proyecto original del curso <code>public/images/jumbotron.png</code></li>
-      <li>Pegar la imagen en <code>public/images/</code></li>
-    </ul>
+    Edición del archivo de rutas <code>routes/web.php</code>
+    <br>
+    <em>*Rutas para cursos</em>
   </li>
-  <li>Edición de la vista <code>resources/views/layouts/app.blade.php</code></li>
-  <li>Edición de la vista <code>resources/views/home.blade.php</code></li>
+  <li>
+    Edición del modelo <code>app/Course.php</code>
+    <br>
+    <em>*Se hace uso de Model Binding para usar el slug en lugar del id en la url</em>
+  </li>
 </ol>
 <!-- End Commit instructions -->
 

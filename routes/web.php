@@ -29,6 +29,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/* Grupos de rutas de Cursos */
+Route::group(['prefix' => 'courses'], function() {
+    Route::get('/{course}', 'CourseController@show')->name('courses.detail');
+});
+
+
 /*  */
 Route::get('/images/{path}/{attachment}', function($path, $attachment){
     $file = sprintf('storage/%s/%s', $path, $attachment);
@@ -36,3 +42,5 @@ Route::get('/images/{path}/{attachment}', function($path, $attachment){
         return Image::make($file)->response();
     }
 });
+
+/*  */
