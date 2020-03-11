@@ -4,28 +4,22 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Obtener el detalle de un curso con sus relaciones, diferencia entre WITH y LOAD</strong></h2>
+<h2>Commit - <strong>Obtener Countables desde Eloquent con withCount</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Creación y edición del controlador <code>app/Http/Controllers/CourseController</code>
-    <pre>php artisan make:controller CourseController</pre>
-    <em>*No olvidar importar el modelo <code>use App\Course;</code></em>
-  </li>
-  <li>
-    Edición del archivo de rutas <code>routes/web.php</code>
-    <br>
-    <em>*Rutas para cursos</em>
+    Edición del controlador <code>app/Http/Controllers/CourseController</code>
   </li>
   <li>
     Edición del modelo <code>app/Course.php</code>
-    <br>
-    <em>*Se hace uso de Model Binding para usar el slug en lugar del id en la url</em>
   </li>
   <li>
-    Edición del modelo <code>app/Review.php</code>
+    Creación de la carpeta en <code>resources/views/courses</code>
+    <ul>
+      <li>Creación y edición de la vista <code>resources/views/courses/detail.blade.php</code></li>
+    </ul>
   </li>
 </ol>
 <!-- End Commit instructions -->

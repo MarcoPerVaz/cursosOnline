@@ -27,9 +27,11 @@ class CourseController extends Controller
             },
             'reviews.user',
             'teacher'
-        ])->withCount(['students', 'reviews'])->get();
-
-        dd($course);
+        ])->get();
+        
+        $related = $course->relatedCourses();
+        
+        return view('courses.detail', compact('course', 'related'));
     }
     /*  */
 }

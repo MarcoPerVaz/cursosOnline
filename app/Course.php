@@ -49,6 +49,8 @@ class Course extends Model
     /*  */
 
     /*  */
+        /* Propiedad withCount */
+        protected $withCount = ['reviews', 'students'];
         /*  */
         public function pathAttachment()
         {
@@ -105,6 +107,13 @@ class Course extends Model
            ó
            Desde la vista sería $course->customRating 
         */
+
+        /* Consulta de cursos relacionados con sus reviews */
+        public function relatedCourses()
+        {
+            return Course::with('reviews')->whereCategoryId($this->category_id)
+                ->where('id', '!=', $this->id)->latest()->limit(6)->get();
+        }
     /*  */
 }
 
