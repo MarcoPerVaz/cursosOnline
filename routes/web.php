@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 /* Grupos de rutas de Cursos */
 Route::group(['prefix' => 'courses'], function() {
