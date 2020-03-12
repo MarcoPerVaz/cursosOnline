@@ -17,7 +17,7 @@
                     <h6>{{ __("Número de valoraciones") }}: {{ $course->reviews_count }}</h6>
                     @include('partials.courses.rating')
                 </div>
-
+                @include('partials.courses.action_button')
             </div>
         </div>
     </div>
