@@ -16,6 +16,10 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+/*  */
+import StripeForm from './components/StripeForm.vue'
+Vue.component('stripe-form', StripeForm);
+/*  */
 
 const app = new Vue({
     el: '#app'
