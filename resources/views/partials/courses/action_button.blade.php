@@ -3,7 +3,7 @@
   @auth {{-- Si pasa auth --}}
     @can('opt_for_course', $course) {{-- Si pasa la política opt_for_course --}}
       @can('subscribe', \App\Course::class) {{-- Si pasa la otra política subscribe --}}
-        <a href="#" class="btn btn-subscribe btn-bottom btn-block">
+        <a href="{{ route('subscriptions.plans') }}" class="btn btn-subscribe btn-bottom btn-block">
           <i class="fa fa-bolt"> {{ __("Subscribirme") }}</i>
         </a>
       @else {{-- Si no pasa subscribe --}}

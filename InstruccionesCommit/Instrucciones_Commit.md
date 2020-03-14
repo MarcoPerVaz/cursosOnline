@@ -4,35 +4,37 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Instalar Stripe, VueTables 2 y VueResource y desarrollar componente StripeForm</strong></h2>
+<h2>Commit - <strong>Controlador Subscriptions, Middleware en el constructor e inicio página planes</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
+  <li>Edición de la vista <code>resources/views/layouts/app.blade.php</code></li>
   <li>
-    Instalar dependencias usando Yarn
-    <pre>yarn add vue-stripe vue-tables-2 vue-resource</pre>
+    Creación y edición del controlador <code>app/Http/Controllers/SubscriptionController</code>
+    <pre>php artisan make:controller SubscriptionController</pre>
+    <ul>
+      <li>Creación y edición del método constructor <code>public function __construct()</code></li>
+      <li>Creación y edición de la función <code>public function plans()</code></li>
+      <li>Creación de la función <code>public function processSubscription()</code></li>
+    </ul>
   </li>
+  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
+  <li>Edición de la vista parcial <code>resources/views/partials/courses/action_button.blade.php</code></li>
   <li>
-    Creación y edición del componente <code>resources/assets/js/components/StripeForm.vue</code>
+    Creación de la carpeta <code>resources/views/subscriptions/</code>
+    <ul>
+      <li>Creación y edición de la vista <code>resources/views/subscriptions/plans.blade.php</code></li>
+    </ul>
   </li>
-  <li>Edición del archivo <code>resources/assets/js/app.js</code></li>
 </ol>
 <!-- End Commit instructions -->
 
   <!-- Notes -->
   <h3>Notas:</h3>
   <ul>
-    <li>
-      Documentación <a href="https://www.npmjs.com/package/vue-stripe">Vue-stripe</a>
-    </li>
-    <li>
-      Documentación <a href="https://www.npmjs.com/package/vue-tables-2">Vue-tables-2</a>
-    </li>
-    <li>
-      Documentación <a href="https://github.com/pagekit/vue-resource">Vue-resource</a>
-    </li>
+  
   </ul>
 
-  <em>*Hasta aquí todo va como en el curso, muestra un error que se solucionará más adelante</em>
+  <em></em>
   <!-- End notes -->
