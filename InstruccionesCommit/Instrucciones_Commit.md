@@ -4,17 +4,14 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Utilizar componente de Vuejs 2 StripeForm para procesar cada plan del sitio</strong></h2>
+<h2>Commit - <strong>Stack y Push en Blade añadiendo CSS y JS dinámicamente</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>
-    Creación de la carpeta <code>resources/views/partials/stripe/</code>
-    <ul>
-      <li>Creación y edición de la vista parcial <code>resources/views/partials/stripe/form.blade.php</code></li>
-    </ul>
-  </li>
+  <li>Creación y edición del archivo <code>public/css/pricing.css</code></li>
+  <li>Edición de la vista <code>resources/views/layouts/app.blade.php</code></li>
+  <li>Edición de la vista <code>resources/views/subscriptions/plans.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 

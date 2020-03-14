@@ -1,6 +1,10 @@
 
 @extends('layouts.app')
 
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('css/pricing.css') }}">
+@endpush
+
 @section('jumbotron')
   @include('partials.jumbotron', [
     'title' => __("Suscríbete ahora a uno de nuestros planes"),
@@ -11,3 +15,4 @@
 @section('content')
     
 @endsection
+
