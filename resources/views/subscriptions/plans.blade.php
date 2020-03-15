@@ -13,6 +13,69 @@
 @endsection
 
 @section('content')
-    
+  <div class="container">
+    <div class="pricing-table pricing-three-column row">
+      <div class="plan col-sm-4 col-lg-4">
+        <div class="plan-name-bronze">
+          <h2>{{ __("MENSUAL") }}</h2>
+          <span>{{ __(":price / Mes", ['price' => '$243.00']) }}</span>
+        </div>
+        <ul>
+          <li class="plan-feature">{{ __("Acceso a todos los cursos") }}</li>
+          <li class="plan-feature">{{ __("Acceso a todos los archivos") }}</li>
+          <li class="plan-feature">
+            @include('partials.stripe.form', [
+              "product" => [
+                "name" => __("Suscripción"),
+                "description" => __("Mensual"),
+                "type" => "monthly",
+                "amount" => 24300
+              ]
+            ])
+          </li>
+        </ul>
+      </div>
+      <div class="plan col-sm-4 col-lg-4">
+        <div class="plan-name-silver">
+          <h2>{{ __("TRIMESTRAL") }}</h2>
+          <span>{{ __(":price / 3 meses", ['price' => '$486.00']) }}</span>
+        </div>
+        <ul>
+          <li class="plan-feature">{{ __("Acceso a todos los cursos") }}</li>
+          <li class="plan-feature">{{ __("Acceso a todos los archivos") }}</li>
+          <li class="plan-feature">
+            @include('partials.stripe.form', [
+              "product" => [
+                "name" => __("Suscripción"),
+                "description" => __("Trimestral"),
+                "type" => "quarterly",
+                "amount" => 48600
+              ]
+            ])
+          </li>
+        </ul>
+      </div>
+      <div class="plan col-sm-4 col-lg-4">
+        <div class="plan-name-gold">
+          <h2>{{ __("ANUAL") }}</h2>
+          <span>{{ __(":price / 12 meses", ['price' => '$2 191.00']) }}</span>
+        </div>
+        <ul>
+          <li class="plan-feature">{{ __("Acceso a todos los cursos") }}</li>
+          <li class="plan-feature">{{ __("Acceso a todos los archivos") }}</li>
+          <li class="plan-feature">
+            @include('partials.stripe.form', [
+              "product" => [
+                "name" => __("Suscripción"),
+                "description" => __("Anual"),
+                "type" => "yearly",
+                "amount" => 219100
+              ]
+            ])
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 @endsection
 

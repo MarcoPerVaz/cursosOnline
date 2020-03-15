@@ -4,13 +4,11 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Stack y Push en Blade añadiendo CSS y JS dinámicamente</strong></h2>
+<h2>Commit - <strong>Desarrollar la página con el listado de planes de la plataforma</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>Creación y edición del archivo <code>public/css/pricing.css</code></li>
-  <li>Edición de la vista <code>resources/views/layouts/app.blade.php</code></li>
   <li>Edición de la vista <code>resources/views/subscriptions/plans.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
