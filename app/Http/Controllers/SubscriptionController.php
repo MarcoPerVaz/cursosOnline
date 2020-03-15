@@ -24,7 +24,34 @@ class SubscriptionController extends Controller
 
     public function processSubscription()
     {
-        
+        $token = request('stripeToken');
+
+        try {
+            if (\request()->has('coupon')) { /* Si se ingresa un cupón */
+
+               \request()->user()->newSubscription('main', \request('type'))
+                ->withCoupon(\request('coupon'))->create($token);
+
+            } else { /* Si no se ingresa cupón */
+
+                \request()->user()->newSubscription('main', \request('type'))
+                    ->create($token);
+
+            }
+
+            return redirect(route('subscriptions.admin'))
+                ->with('message', ['success', __("La suscripción se ha llevado a cabo correctamente")]);
+
+        } catch (\Exception $exception) {
+            /* En caso de que falle mostrará un mensaje */
+            $error = $exception->getMessage();
+            return back()->with('message', ['danger', $error]);
+        }
+    }
+
+    public function admin() 
+    {
+        return view('subscriptions.admin');
     }
     /*  */
 }
