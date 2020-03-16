@@ -51,7 +51,8 @@ class SubscriptionController extends Controller
 
     public function admin() 
     {
-        return view('subscriptions.admin');
+        $subscriptions = auth()->user()->subscriptions;
+        return view('subscriptions.admin', compact('subscriptions'));
     }
     /*  */
 }
