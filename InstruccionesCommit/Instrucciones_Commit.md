@@ -4,20 +4,12 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Obtener los cursos a los que un estudiante está inscrito</strong></h2>
+<h2>Commit - <strong>Desarrollar template de los cursos a los que está inscrito el estudiante</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
- <li>Edición del archivo de rutas <code>routes/web.php</code></li>
- <li>Edición de la vista parcial <code>resources/views/partials/navigations/student.blade.php</code></li>
- <li>Edición de la vista parcial <code>resources/views/partials/navigations/teacher.blade.php</code></li>
- <li>
-   Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
-   <ul>
-     <li>Creación y edición de la función <code>public function suscribed()</code></li>
-   </ul>
- </li>
+  <li>Creación y edición de la vista <code>resources/views/courses/subscribed.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -28,7 +20,9 @@
   </ul>
 
   <em>
-    *Se muestra error porque falta crear una vista <code>resources/views/courses/subscribed.blade.php</code>
-    (Se crea más adelante)
+    *(Solucionado) Falta crear una vista por lo que muestra error
+    <br>
+    Se agregó la vista
+    <code>resources/views/courses/subscribed.blade.php</code>
   </em>
   <!-- End notes -->
