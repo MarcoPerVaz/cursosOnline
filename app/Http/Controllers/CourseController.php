@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 /*  */
 use App\Course;
+use App\Mail\NewStudentInCourse;
 /*  */
 
 class CourseController extends Controller
@@ -36,7 +37,9 @@ class CourseController extends Controller
 
     public function inscribe(Course $course)
     {
+        // return new NewStudentInCourse($course, "admin"); /* Para hacer preview del mail  */
         $course->students()->attach(auth()->user()->student->id); /* Registra en la tabla pivote course_student */
+        \Mail::to($course->teacher->user)->send(new NewStudentInCourse($course, auth()->user()->name));
         return back()->with('message', ['success', __("Inscrito correctamente al curso")]);
     }
     /*  */
