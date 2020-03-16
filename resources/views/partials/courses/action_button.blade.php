@@ -8,7 +8,7 @@
         </a>
       @else {{-- Si no pasa subscribe --}}
         @can('inscribe', $course) {{-- Si pasa la política inscribe --}}
-          <a href="#" class="btn btn-subscribe btn-bottom btn-block">
+          <a href="{{ route('courses.inscribe', ['slug' => $course->slug]) }}" class="btn btn-subscribe btn-bottom btn-block">
             <i class="fa fa-bolt"> {{ __("Inscribirme") }}</i>
           </a>
         @else {{-- Si no pasa inscribe --}}

@@ -4,27 +4,18 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Descargar y personalizar facturas</strong></h2>
+<h2>Commit - <strong>Inscripción de estudiantes a los cursos</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
  <li>
-   Edición del controlador <code>app/Http/Controllers/InvoiceController.php</code>
+   Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
    <ul>
-     <li>Edición de la función <code>public function download()</code></li>
+     <li>Creación y edición de la función <code>public function inscribe()</code></li>
    </ul>
  </li>
- <li>
-   Comando para publicar las vistas de cualquier librería que pueda ser personalizado
-   <pre>php artisan vendor:publish</pre>
-   Elegir el número de <code>Provider: Laravel\Cashier\CashierServiceProvider</code>
-   <br>
-   Colocarlo en la consola y dar enter
-   <br>
-   <em>*A partir de laravel 5.6 en la consola se te muestran opciones para decidir que librería publicar</em>
-   <br>*Se crea la vista para personalizar la factura dependiendo las necesidades del cliente
- </li>
+ <li>Edición de la vista parcial <code>resources/views/partials/courses/action_button.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 

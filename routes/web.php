@@ -31,6 +31,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 /* Grupos de rutas de Cursos */
 Route::group(['prefix' => 'courses'], function() {
+    Route::get('/{course}/inscribe', 'CourseController@inscribe')->name('courses.inscribe')->middleware('auth');
     Route::get('/{course}', 'CourseController@show')->name('courses.detail');
 });
 

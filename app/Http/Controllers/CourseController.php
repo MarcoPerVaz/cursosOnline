@@ -33,6 +33,12 @@ class CourseController extends Controller
         
         return view('courses.detail', compact('course', 'related'));
     }
+
+    public function inscribe(Course $course)
+    {
+        $course->students()->attach(auth()->user()->student->id); /* Registra en la tabla pivote course_student */
+        return back()->with('message', ['success', __("Inscrito correctamente al curso")]);
+    }
     /*  */
 }
 
