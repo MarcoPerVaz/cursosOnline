@@ -42,6 +42,8 @@ Route::group(["prefix" => "subscriptions"], function() {
          ->name('subscriptions.admin');
     Route::post('/process_subscription', 'SubscriptionController@processSubscription')
          ->name('subscriptions.process_subscription');
+    Route::post('/resume', 'SubscriptionController@resume')->name('subscriptions.resume');
+    Route::post('/cancel', 'SubscriptionController@cancel')->name('subscriptions.cancel');
 });
 
 /*  */

@@ -4,18 +4,19 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Desarrollar el listado de las suscripciones del usuario identificado</strong></h2>
+<h2>Commit - <strong>Cancelar y renaudar suscripciones</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
+  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
   <li>
     Edición del controlador <code>app/Http/Controllers/SubscriptionController.php</code>
     <ul>
-      <li>Edición de la función <code>public function admin()</code></li>
+      <li>Creación y edición de la función <code>public function resume()</code></li>
+      <li>Creación y edición de la función <code>public function cancel()</code></li>
     </ul>
   </li>
-  <li>Edición de la vista <code>resources/views/subscriptions/admin.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
