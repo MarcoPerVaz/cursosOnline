@@ -29,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
 class Teacher extends Model
 {
     /*  */
+        /* Propiedad fillable */
+        protected $fillable = ['user_id'];
         /* Relations */
         public function courses()
         {
