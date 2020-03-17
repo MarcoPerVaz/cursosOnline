@@ -4,17 +4,27 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Desarrollar el formulario de perfil para poder cambiar la contraseña</strong></h2>
+<h2>Commit - <strong>Desarrollar una regla de valoración (Rule) para añadir fortaleza a los passwords</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>Edición de la vista <code>resources/views/Profile/index.blade.php</code></li>
-  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
+  <li>
+    Creación de la Regla <code>app/Rules/StrengthPassword</code>
+    <pre>php artisan make:rule StrengthPassword</pre>
+    <ul>
+      <li>Edición de la función <code>public function passes($attribute, $value)</code></li>
+      <li>Edición de la función <code>public function message()</code></li>
+    </ul>
+  </li>
   <li>
     Edición del controlador <code>app/Http/Controllers/ProfileController.php</code>
     <ul>
-      <li>Creación y edición de la función <code>public function update()</code></li>
+      <li>
+        Edición de la función <code>public function update()</code>
+        <br>
+        <em>*No olvidar importar la regla <code>use App\Rules\StrengthPassword;</code></em>
+      </li>
     </ul>
   </li>
 </ol>
