@@ -80,6 +80,11 @@ class User extends Authenticatable
     
 
     /*  */
+        /*  */
+        public function pathAttachment()
+        {
+            return '/images/users/' . $this->picture;
+        }
         /* Operación ternaria que obtiene el role del usuario logueado o si es invitado */
         public static function navigation()
         {

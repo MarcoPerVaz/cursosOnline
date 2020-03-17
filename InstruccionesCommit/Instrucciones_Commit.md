@@ -4,21 +4,20 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Procesar el formulario de reseñas</strong></h2>
+<h2>Commit - <strong>Desarrollar el listado de reseñas</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
+ <li>Creación y edición de la vista parcial <code>resources/views/partials/courses/reviews.blade.php</code></li>
+ <li>Edición de la vista <code>resources/views/courses/detail.blade.php</code></li>
  <li>
-   Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
+   Edición del modelo <code>app/User.php</code>
    <ul>
-     <li>
-       Edición de la función <code>public function addReview()</code>
-       <br>
-       <em>*No olvidar importar el modelo <code>use App\Review;</code></em>
-      </li>
+     <li>Creación y edición de la función <code>public function pathAttachment()</code></li>
    </ul>
  </li>
+ <li>Edición de la vista parcial <code>resources/views/partials/courses/rating.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -28,5 +27,8 @@
     
   </ul>
 
-  <em></em>
+  <em>
+    *Se cambio mucho porque el rating se obtenía mediante promedio(avg) y los cambios fueron para obtener el rating del
+    usuario a ese curso y no del promedio
+  </em>
   <!-- End notes -->
