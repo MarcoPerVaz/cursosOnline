@@ -31,8 +31,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 /* Grupos de rutas de Cursos */
 Route::group(['prefix' => 'courses'], function() {
-    Route::get('/suscribed', 'CourseController@suscribed')->name('courses.suscribed')->middleware('auth');
-    Route::get('/{course}/inscribe', 'CourseController@inscribe')->name('courses.inscribe')->middleware('auth');
+    Route::group(['middleware' => ['auth']], function() {
+        Route::get('/suscribed', 'CourseController@suscribed')->name('courses.suscribed');
+        Route::get('/{course}/inscribe', 'CourseController@inscribe')->name('courses.inscribe');
+        Route::post('/add_review', 'CourseController@addReview')->name('courses.add_review');
+    });
     Route::get('/{course}', 'CourseController@show')->name('courses.detail');
 });
 

@@ -53,6 +53,11 @@ class CourseController extends Controller
         return view('courses.suscribed', compact('courses'));
 
     }
+
+    public function addReview()
+    {
+        
+    }
     /*  */
 }
 
