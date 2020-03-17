@@ -4,27 +4,21 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Permitir que el estudiante se convierta en instructor</strong></h2>
+<h2>Commit - <strong>Datatables cliente para mostrar los estudiantes de un instructor</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>Edición de la vista <code>resources/views/Profile/index.blade.php</code></li>
-  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
   <li>
-    Creación del controlador <code>app/Http/Controllers/SolicitudeController.php</code>
-    <pre>php artisan make:controller SolicitudeController</pre>
+    Creación del controlador <code>app/Http/Controllers/TeacherController.php</code>
+    <pre>php artisan make:controller TeacherController</pre>
     <ul>
-      <li>
-        Creación de la función <code>public function teacher()</code>
-        <br>
-        <em>*No olvidar importar el modelo <code>use App\Role;</code></em>
-        <br>
-        <em>*No olvidar importar el modelo <code>use App\Teacher;</code></em>
-      </li>
+      <li>Creación de la función <code>public function students()</code></li>
     </ul>
   </li>
-  <li>Edición del modelo <code>app/Teacher.php</code></li>
+  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
+  <li>Creación y edición de la vista parcial <code>resources/views/partials/modal.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -34,5 +28,8 @@
     
   </ul>
 
-  <em></em>
+  <em>
+    *Se muestra un error porque no se le está enviando información desde el controlador
+    a Datatables pero se solucionan más adelante
+  </em>
   <!-- End notes -->

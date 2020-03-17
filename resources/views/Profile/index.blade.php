@@ -84,9 +84,64 @@
             </div>
           </div>
         @else {{-- Si es profesor --}}
-          si lo es
+          <div class="card">
+            <div class="card-header">
+              {{ __("Administrar los curso que imparto") }}
+            </div>
+            <div class="card-body">
+              <a href="{{ route('teacher.courses') }}" class="btn btn-secondary btn-block">
+                <i class="fa fa-leanpub"></i>{{ __("Administrar ahora") }}
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              {{ __("Mis estudiantes") }}
+            </div>
+            <div class="card-body">
+              <table class="table table-striped table-bordered nowrap" cellspacing="0" id="students-table">
+                <thead>
+                  <tr>
+                    <th>{{ __("ID") }}</th>
+                    <th>{{ __("Nombre") }}</th>
+                    <th>{{ __("Email") }}</th>
+                    <th>{{ __("Cursos") }}</th>
+                    <th>{{ __("Acciones") }}</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
         @endif
       </div>
     </div>
   </div>
+  @include('partials.modal')
 @endsection
+
+@push('scripts')
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script>
+    let dt; 
+    let modal = jQuery('#appModal');
+    jQuery(document).ready(function() {
+      dt = jQuery('#students-table').DataTable({
+        pageLength: 5,
+        lengthMenu: [5, 10, 25, 50, 75, 100],
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('teacher.students') !!}',
+        language: {
+          url: "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json" /* Para traducir datatables a español */
+        },
+        columns: [
+          {data: 'user.id'},
+          {data: 'user.name'},
+          {data: 'user.email'},
+          {data: 'courses_formatted'},
+          {data: 'actios'},
+        ]
+      });
+    });
+  </script>
+@endpush
