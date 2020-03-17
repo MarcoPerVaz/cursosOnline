@@ -12,5 +12,10 @@ class ProfileController extends Controller
         $user = auth()->user()->load('socialAccount');
         return view('profile.index', compact('user'));
     }
+
+    public function update()
+    {
+        dd(\request()->all());
+    }
     /*  */
 }
