@@ -4,25 +4,22 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Desarrollar un middleware para controlar el rol del usuario</strong></h2>
+<h2>Commit - <strong>Inicio de las rutas y el controlador para crear y actualizar cursos</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
+  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
   <li>
-    Creación y edición del middleware <code>app/Http/Middleware/RoleMiddleware.php</code>
-    <pre>php artisan make:middleware RoleMiddleware</pre>
+    Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
     <ul>
       <li>
-        Edición de la función <code>public function handle($request, Closure $next)</code>
+        Creación y edición de la función <code>public function create()</code>
       </li>
     </ul>
   </li>
-  <li>
-    Edición del archivo <code>app/Http/Kernel.php</code>
-    <br>
-    <em>*No olvidar importar el middleware <code>use App\Http\Middleware\RoleMiddleware;</code></em>
-  </li>
+  <li>Edición de la vista parcial <code>resources/views/partials/navigations/teacher.blade.php</code></li>
+  <li>Creación y edición de la vista <code>resources/views/courses/form.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -32,5 +29,5 @@
     
   </ul>
 
-  <em></em>
+  <em>*Más información en <code>routes/web.php</code></em>
   <!-- End notes -->

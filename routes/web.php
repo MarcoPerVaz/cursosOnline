@@ -35,6 +35,11 @@ Route::group(['prefix' => 'courses'], function() {
         Route::get('/suscribed', 'CourseController@suscribed')->name('courses.suscribed');
         Route::get('/{course}/inscribe', 'CourseController@inscribe')->name('courses.inscribe');
         Route::post('/add_review', 'CourseController@addReview')->name('courses.add_review');
+
+        Route::get('/create', 'CourseController@create')->name('courses.create')
+            ->middleware([sprintf("role:%s", \App\Role::TEACHER)]);
+        Route::post('/store', 'CourseController@store')->name('courses.store')
+            ->middleware([sprintf("role:%s", \App\Role::TEACHER)]);
     });
     Route::get('/{course}', 'CourseController@show')->name('courses.detail');
 });
@@ -86,3 +91,8 @@ Route::group(['prefix' => "profile", 'middleware' => ['auth']], function() {
     });
 
 /*  */
+
+/* Notas:
+    *role:%s significa que el middleware role acepta un parámetro y usando la función sprintf() se le pasa como parámetro
+     \App\Role::TEACHER
+*/
