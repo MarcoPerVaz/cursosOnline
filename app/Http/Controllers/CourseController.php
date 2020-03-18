@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 /*  */
 use App\Course;
-use App\Mail\NewStudentInCourse;
 use App\Review;
+use App\Mail\NewStudentInCourse;
+use App\Http\Requests\CourseRequest;
 /*  */
 
 class CourseController extends Controller
@@ -72,6 +73,11 @@ class CourseController extends Controller
         $course = new Course();
         $btnText = __("Enviar curso para revisión");
         return view('courses.form', compact('course', 'btnText'));
+    }
+
+    public function store(CourseRequest $course_request)
+    {
+        dd($course_request->all());
     }
     /*  */
 }

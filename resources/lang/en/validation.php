@@ -141,6 +141,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        /*  */
+        'requirements.0'        => "requirement 1",
+        'requirements.1'        => "requirement 2",
+        'goals.0'               => "goal 1",
+        'goals.1'               => "goal 2",
+        /*  */
+    ],
 
 ];
