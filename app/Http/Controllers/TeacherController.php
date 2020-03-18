@@ -22,6 +22,11 @@ class TeacherController extends Controller
         return \DataTables::of($students)->addColumn('actions', $actions)
                 ->rawColumns(['actions', 'courses_formatted'])->make(true);
     }
+
+    public function sendMessageToStudent()
+    {
+        return response()->json(['res' => true]);
+    }
     /*  */
 }
 

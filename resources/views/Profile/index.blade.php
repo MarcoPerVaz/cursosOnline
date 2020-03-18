@@ -159,5 +159,27 @@
 
       modal.modal();
     });
+
+    jQuery(document).on("click", "#modalAction", function(e) {
+      jQuery.ajax({
+        url: '{{ route('teacher.send_message_to_student') }}',
+        type: 'POST',
+        headers: {
+          'x-csrf-token': $("meta[name=csrf-token]").attr('content')
+        },
+        data: {
+          info: $("#studentMessage").serialize() /* Form creado dinámicamente con jQuery */
+        },
+        success: (res) => {
+          if (res.res) {
+            modal.find('#modalAction').hide();
+            modal.find('.modal-body').html('<div class="alert alert-success">{{ __("Mensaje enviado correctamente") }}</div>');
+          } else {
+            modal.find('.modal-body')
+              .html('<div class="alert alert-danger">{{ __("Ha ocurrido un error enviando el mensaje") }}</div>');
+          }
+        }
+      });
+    });
   </script>
 @endpush

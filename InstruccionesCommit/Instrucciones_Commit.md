@@ -4,13 +4,20 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Ventana modal para enviar un mensaje a los estudiantes</strong></h2>
+<h2>Commit - <strong>Procesar envío de correo con AJAX añadiendo el CSRF a la petición</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>Edición de la vista <code>resources/Profile/index.blade.php</code></li>
   <li>Edición de la vista parcial <code>resources/views/partials/modal.blade.php</code></li>
+  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
+  <li>
+    Edición del controlador <code>app/Http/Controllers/TeacherController.php</code>
+    <ul>
+      <li>Creación y edición de la función <code>public function sendMessageToStudent()</code></li>
+    </ul>
+  </li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -20,10 +27,5 @@
     
   </ul>
 
-  <em>
-    *(Solucionado) Se muestra un error porque no se le está enviando información desde el controlador
-    a Datatables pero se solucionan más adelante
-  </em>
-  <br>
-  <em>*Más información en el controlador <code>app/Http/Controllers/TeacherController.php</code></em>
+  <em></em>
   <!-- End notes -->
