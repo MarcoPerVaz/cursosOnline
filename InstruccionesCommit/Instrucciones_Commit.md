@@ -4,12 +4,25 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Detectar si el usuario ha accedido con Github, Facebook o Google y notificar</strong></h2>
+<h2>Commit - <strong>Desarrollar un middleware para controlar el rol del usuario</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>Edición de la vista <code>resources/views/Profile/index.blade.php</code></li>
+  <li>
+    Creación y edición del middleware <code>app/Http/Middleware/RoleMiddleware.php</code>
+    <pre>php artisan make:middleware RoleMiddleware</pre>
+    <ul>
+      <li>
+        Edición de la función <code>public function handle($request, Closure $next)</code>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Edición del archivo <code>app/Http/Kernel.php</code>
+    <br>
+    <em>*No olvidar importar el middleware <code>use App\Http\Middleware\RoleMiddleware;</code></em>
+  </li>
 </ol>
 <!-- End Commit instructions -->
 
