@@ -113,6 +113,19 @@
             </div>
           </div>
         @endif
+        @if ($user->socialAccount)
+          <div class="card">
+            <div class="card-header">
+              {{ __("Acceso con Socialite") }}
+            </div>
+            <div class="card-body">
+              <button class="btn btn-outline-dark btn-block">
+                {{ __("Registrado con") }}: <i class="fa fa-{{ $user->socialAccount->provider }}"></i>
+                {{ $user->socialAccount->provider }}
+              </button>
+            </div>
+          </div>
+        @endif
       </div>
     </div>
   </div>
@@ -135,7 +148,7 @@
           url: "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json" /* Para traducir datatables a español */
         },
         columns: [
-          {data: 'user.id'},
+          {data: 'user.id', visible: false}, /* visible: false es para ocultar la columna en Datatables */
           {data: 'user.name'},
           {data: 'user.email'},
           {data: 'courses_formatted'},

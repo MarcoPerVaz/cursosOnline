@@ -4,36 +4,12 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Procesar envío de correo con AJAX añadiendo el CSRF a la petición</strong></h2>
+<h2>Commit - <strong>Detectar si el usuario ha accedido con Github, Facebook o Google y notificar</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>
-    Creación y edición del archivo de mail <code>app/Mail/MessageToStudent.php</code>
-    <pre>php artisan make:mail MessageToStudent</pre>
-    <ul>
-      <li>Edición de la función constructor <code>public function __construct()</code></li>
-      <li>Edición de la función constructor <code>public function build()</code></li>
-      <li>
-        Creación y edición de la vista del email <code>resources/views/emails/message_to_student.blade.php</code>
-        <br>
-        <em>*Cuidado con los espacios al usar lenguaje markdown</em>
-      </li>
-      <li>
-        Edición del controlador <code>app/Http/Controllers/TeacherController.php</code>
-        <ul>
-          <li>
-            Edición de la función <code>public function sendMessageToStudent()</code>
-            <br>
-            <em>*No olvidar importar el modelo <code>use App\User;</code></em>
-            <br>
-            <em>*No olvidar importar la clase <code>use App\Mail\MessageToStudent;</code></em>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>Edición de la vista <code>resources/views/Profile/index.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
