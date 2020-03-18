@@ -27,6 +27,8 @@ class Student extends Model
     /*  */
         /* Fillable */
         protected $fillable = ['user_id', 'title'];
+        /* Appends */
+        protected $appends = ['courses_formatted'];
         /* Relations */
         public function courses() {
             return $this->belongsToMany(Course::class);
@@ -34,6 +36,12 @@ class Student extends Model
 
         public function user() {
             return $this->belongsTo(User::class)->select('id', 'role_id', 'name', 'email');
+        }
+
+        /*  */
+        public function getCoursesFormattedAttribute()
+        {
+            return $this->courses->pluck('name')->implode('<br />'); /* Retorna curso 1 <br> curso 2 <br> curso 3 */
         }
     /*  */
 }

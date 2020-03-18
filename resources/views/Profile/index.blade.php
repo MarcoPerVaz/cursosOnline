@@ -139,7 +139,7 @@
           {data: 'user.name'},
           {data: 'user.email'},
           {data: 'courses_formatted'},
-          {data: 'actios'},
+          {data: 'actions'},
         ]
       });
     });
