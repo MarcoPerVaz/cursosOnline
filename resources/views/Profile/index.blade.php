@@ -143,5 +143,21 @@
         ]
       });
     });
+
+    /* Enviar emails a estudiantes */
+    jQuery(document).on('click', '.btnEmail', function(e) {
+      e.preventDefault();
+      const id = jQuery(this).data('id'); /* data-id="{{ $user['id'] }}"> resources/views/students/datatables/actions.blade.php */
+      modal.find('.modal-title').text('{{ __("Enviar mensaje") }}') /* <h5 class="modal-title"></h5> resources/views/partials/moda.blade.php */
+      modal.find('#modalAction').text('{{ __("Enviar mensaje") }}').show() /* <button id="modalAction"></button> resources/views/partials/moda.blade.php */
+
+      let $form = $("<form id='studentMessage'></form>");
+      $form.append(`<input type="hidden" name="user_id" value="${id}" />`);
+      $form.append(`<textarea class="form-control" name="message"></textarea>`);
+
+      modal.find('.modal-body').html($form);
+
+      modal.modal();
+    });
   </script>
 @endpush

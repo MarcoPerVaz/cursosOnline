@@ -10,7 +10,7 @@
             </div>
 
             <div class="modal-body">
-
+            {{-- Aquí se muestra el modal creado desde jQuery función click - resources/views/Profile/index.blade.php --}}
             </div>
 
             <div class="modal-footer">
