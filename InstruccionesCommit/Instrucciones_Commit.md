@@ -9,13 +9,29 @@
 
 <!-- Commit instructions -->
 <ol>
-  <li>Edición de la vista <code>resources/Profile/index.blade.php</code></li>
-  <li>Edición de la vista parcial <code>resources/views/partials/modal.blade.php</code></li>
-  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
   <li>
-    Edición del controlador <code>app/Http/Controllers/TeacherController.php</code>
+    Creación y edición del archivo de mail <code>app/Mail/MessageToStudent.php</code>
+    <pre>php artisan make:mail MessageToStudent</pre>
     <ul>
-      <li>Creación y edición de la función <code>public function sendMessageToStudent()</code></li>
+      <li>Edición de la función constructor <code>public function __construct()</code></li>
+      <li>Edición de la función constructor <code>public function build()</code></li>
+      <li>
+        Creación y edición de la vista del email <code>resources/views/emails/message_to_student.blade.php</code>
+        <br>
+        <em>*Cuidado con los espacios al usar lenguaje markdown</em>
+      </li>
+      <li>
+        Edición del controlador <code>app/Http/Controllers/TeacherController.php</code>
+        <ul>
+          <li>
+            Edición de la función <code>public function sendMessageToStudent()</code>
+            <br>
+            <em>*No olvidar importar el modelo <code>use App\User;</code></em>
+            <br>
+            <em>*No olvidar importar la clase <code>use App\Mail\MessageToStudent;</code></em>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ol>

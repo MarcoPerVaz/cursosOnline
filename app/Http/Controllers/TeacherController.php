@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 /*  */
 use App\Student;
+use App\User;
+use App\Mail\MessageToStudent;
 /*  */
 
 class TeacherController extends Controller
@@ -25,7 +27,17 @@ class TeacherController extends Controller
 
     public function sendMessageToStudent()
     {
-        return response()->json(['res' => true]);
+        $info = \request('info'); /* Información recuperada de la variable info a tráves de ajax resources\views\Profile\index.blade.php */
+        $data = [];
+        parse_str($info, $data); /* Pasar el contenido de $info a un array en $data */
+        $user = User::findOrFail($data['user_id']);
+        try {
+            \Mail::to($user)->send(new MessageToStudent(auth()->user()->name, $data['message']));
+            $success = true;
+        } catch (\Exception $exception) {
+            $success = false;
+        }
+        return response()->json(['res' => $success]);
     }
     /*  */
 }
