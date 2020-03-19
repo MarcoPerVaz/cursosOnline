@@ -4,26 +4,18 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>FormReuqest para validar el alta de los cursos</strong></h2>
+<h2>Commit - <strong>Desarrollar un Helper para subir archivos y preparar el curso para guardar</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Creación y edición del FormRequest <code>app/Http/Request/CourseRequest.php</code>
-    <pre>php artisan make:request CourseRequest</pre>
-    <em>*Al usar el comando la carpeta <code>Request/</code> se crea si no existe</em>
-    <br>
+    Creación de la carpeta <code>app/Helpers</code>
     <ul>
       <li>
-        Edición de la función <code>public function authorize()</code>
+        Creación y edición del archivo <code>app/Helpers/Helper.php</code>
         <br>
-        <em>*No olvidar importar el modelo <code>use App\Role;</code></em>
-      </li>
-      <li>
-        Edición de la función <code>public function rules()</code>
-        <br>
-        <em>*No olvidar importar la clase <code>use Illuminate\Validation\Rule;</code></em>
+        <em>*No olvidar importar el namespace <code>namespace App\Helpers;</code></em>
       </li>
     </ul>
   </li>
@@ -31,14 +23,14 @@
     Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
     <ul>
       <li>
-        Creación y edición de la función <code>public function store()</code>
+        Edición de la función <code>public function store(CourseRequest $course_request)</code>
         <br>
-        <em>*No olvidar importar el FormRequest <code>use App\Http\Requests\CourseRequest;</code></em>
+        <em>*No olvidar importar el helper <code>use App\Helpers\Helper;</code></em>
+        <br>
+        <em>*No olvidar importar el modelo <code>use App\Course;</code></em>
       </li>
     </ul>
   </li>
-  <li>Edición del archivo <code>resources/lang/en/validation.php</code></li>
-  <li>Edición del archivo <code>resources/lang/es/validation.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
@@ -48,5 +40,5 @@
     
   </ul>
 
-  <em></em>
+  <em>*Más información en <code>app/Http/Controllers/CourseController.php</code></em>
   <!-- End notes -->

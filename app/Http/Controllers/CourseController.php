@@ -7,6 +7,7 @@ use App\Course;
 use App\Review;
 use App\Mail\NewStudentInCourse;
 use App\Http\Requests\CourseRequest;
+use App\Helpers\Helper;
 /*  */
 
 class CourseController extends Controller
@@ -77,12 +78,22 @@ class CourseController extends Controller
 
     public function store(CourseRequest $course_request)
     {
-        dd($course_request->all());
+        $picture = Helper::uploadFile('picture', 'courses'); 
+        $course_request->merge(['picture'    => $picture]);
+        $course_request->merge(['teacher_id' => $auth()->user()->teacher->id]);
+        $course_request->merge(['status'     => Course::PENDING]);
+
+        Course::create($course_request->input());
     }
     /*  */
 }
 
 /* Notas:
-    *Si se usa with en la consulta no carga las relaciones
-    *Si se usa load en la consulta si carga las relaciones
+    *Helper::uploadFile('picture', 'courses'); 
+        *Dónde picture es le nombre del arhcivo recibido de request()
+        *Dónde courses es la ruta de la carpeta donde se guardan las imágenes storage\app\public\courses
+    *$course_request->merge(['picture' => $picture]);
+        *Se une el helper con el FormRequest creando la variable picture
+    *Course::create($course_request->input());
+        *Se van a insertar todos los campos provenientes de request()
 */
