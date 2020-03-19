@@ -37,12 +37,7 @@ Route::group(['prefix' => 'courses'], function() {
         Route::post('/add_review', 'CourseController@addReview')->name('courses.add_review');
 
         Route::group(['middleware' => [sprintf('role:%s', \App\Role::TEACHER)]], function() {
-            Route::get('/create', 'CourseController@create')->name('courses.create');
-            Route::post('/store', 'CourseController@store')->name('courses.store');
-            Route::put('/{course}/update', 'CourseController@update')->name('courses.update');
-            Route::get('/{slug}/edit', 'CourseController@edit')->name('courses.edit');
-            Route::put('/{course}/edit', 'CourseController@update')->name('courses.edit');
-            Route::delete('/{course}/destroy', 'CourseController@destroy')->name('courses.destroy');
+            Route::resource('courses', 'CourseController');
         });
     });
     Route::get('/{course}', 'CourseController@show')->name('courses.detail');
