@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
 class Requirement extends Model
 {
     /*  */
+        /* Propiedad fillable */
+        protected $fillable = ['course_id', 'requirement'];
         /* Relations */
         public function course()
         {

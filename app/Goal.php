@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
 class Goal extends Model
 {
     /*  */
+        /* Propiedad $fillable */
+        protected $fillable = ['course_id', 'goal'];
         /* Relations */
         public function course() {
             return $this->belongsTo(Course::class);

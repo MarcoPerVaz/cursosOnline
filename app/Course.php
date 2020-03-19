@@ -45,6 +45,8 @@ class Course extends Model
 {
     /*  */
     use SoftDeletes;
+    /* Propiedad $fillable */
+    protected $fillable = ['teacher_id', 'name', 'description', 'picture', 'level_id', 'category_id', 'status'];
     /*  */
     const PUBLISHED = 1;
     const PENDING = 2;
@@ -54,6 +56,43 @@ class Course extends Model
     /*  */
         /* Propiedad withCount */
         protected $withCount = ['reviews', 'students'];
+        /* Evento Eloquent */
+        public static function boot()
+        {
+            parent::boot();
+
+            static::saving(function(Course $course) {
+                if ( ! \App::runningInConsole()) {
+                    $course->slug = str_slug($course->name, "-");
+                }
+            });
+
+            static::saved(function(Course $course) {
+                if ( ! \App::runningInConsole()) {
+                    if (request('requirements')) {
+                        foreach (request('requirements') as $key => $requirement_input) {
+                            if ($requirement_input) {
+                                Requirement::updateOrCreate(['id' => request('requirement_id' . $key)], [
+                                    'course_id'   => $course->id,
+                                    'requirement' => $requirement_input,
+                                ]);
+                            }
+                        }
+                    }
+                    if (request('goals')) {
+                        foreach (request('goals') as $key => $goal_input) {
+                            if ($goal_input) {
+                                Goal::updateOrCreate(['id' => request('goal_id' . $key)], [
+                                    'course_id' => $course->id,
+                                    'goal'      => $goal_input,
+                                ]);
+                            }
+                        }
+                    }
+
+                }
+            });
+        }
         /*  */
         public function pathAttachment()
         {

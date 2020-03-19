@@ -4,32 +4,22 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Desarrollar un Helper para subir archivos y preparar el curso para guardar</strong></h2>
+<h2>Commit - <strong>Evento Eloquent para crear y actualizar requisitos y metas del curso</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Creación de la carpeta <code>app/Helpers</code>
+    Edición del modelo <code>app/Course.php</code>
     <ul>
-      <li>
-        Creación y edición del archivo <code>app/Helpers/Helper.php</code>
-        <br>
-        <em>*No olvidar importar el namespace <code>namespace App\Helpers;</code></em>
-      </li>
+      <li>Creación y edición de la función <code>public static function boot()</code></li>
     </ul>
   </li>
   <li>
-    Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
-    <ul>
-      <li>
-        Edición de la función <code>public function store(CourseRequest $course_request)</code>
-        <br>
-        <em>*No olvidar importar el helper <code>use App\Helpers\Helper;</code></em>
-        <br>
-        <em>*No olvidar importar el modelo <code>use App\Course;</code></em>
-      </li>
-    </ul>
+    Edición del modelo <code>app/Requirement.php</code>
+  </li>
+  <li>
+    Edición del modelo <code>app/Goal.php</code>
   </li>
 </ol>
 <!-- End Commit instructions -->

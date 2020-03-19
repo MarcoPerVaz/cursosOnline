@@ -80,10 +80,15 @@ class CourseController extends Controller
     {
         $picture = Helper::uploadFile('picture', 'courses'); 
         $course_request->merge(['picture'    => $picture]);
-        $course_request->merge(['teacher_id' => $auth()->user()->teacher->id]);
+        $course_request->merge(['teacher_id' => auth()->user()->teacher->id]);
         $course_request->merge(['status'     => Course::PENDING]);
 
+        // dd($course_request->except('_token'));
+
         Course::create($course_request->input());
+
+        return back()
+            ->with('message', ['success', __("Curso enviado correctamente, rebirá un correo con cualquier información")]);
     }
     /*  */
 }
