@@ -4,7 +4,7 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>FormRequest para actualizar cursos y actualización de datos</strong></h2>
+<h2>Commit - <strong>Eliminar cursos utilizando borrados lógicos</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
