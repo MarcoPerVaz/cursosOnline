@@ -90,6 +90,25 @@ class CourseController extends Controller
         return back()
             ->with('message', ['success', __("Curso enviado correctamente, rebirá un correo con cualquier información")]);
     }
+
+    public function edit($slug)
+    {
+        $course = Course::with(['requirements', 'goals'])->withCount(['requirements', 'goals'])
+            ->whereSlug($slug)->first();
+        $btnText = __("Actualizar curso");
+        return view('courses.form', compact('course', 'btnText'));
+    }
+
+    public function update(CourseRequest $course_request, Course $course)
+    {
+        if ($course_request->hasFile('picture')) {
+            \Storage::delete('courses/' . $course->picture); /* Se elimina la imagen antigüa físicamente */
+            $picture = Helper::uploadFile('picture', 'courses'); /* Se sube la imagen físicamente */
+            $course_request->merge(['picture' => $picture]); /* Se une el campo request con la variable $picture */
+        }
+        $course->fill($course_request->input())->save(); /* Actualiza la información en BD */
+        return back()->with('message', ['success', __("Curso actualizado")]);
+    }
     /*  */
 }
 

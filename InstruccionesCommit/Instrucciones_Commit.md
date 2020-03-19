@@ -4,19 +4,29 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Botones para editar, ver y eliminar los cursos de un instructor</strong></h2>
+<h2>Commit - <strong>FormRequest para actualizar cursos y actualización de datos</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
-  <li>Creación de la vista parcial <code>resources/views/partials/courses/teacher_action_buttons.blade.php</code></li>
   <li>
-    Creación de la carpeta <code>resources/views/partials/courses/btn_forms/</code>
+    Edición del controlador <code>app/Http/Controllers/CourseController.php</code>
     <ul>
-      <li>Creación y edición de la vista parcial <code>resources\views\partials\courses\btn_forms\delete.blade.php</code></li>
+      <li>
+        Creación y edición de la función <code>public function edit($slug)</code>
+        <br>
+        <em>*No olvidar importar el modelo <code>use App\Course;</code></em>
+      </li>
+      <li>
+        Creación y edición de la función <code>public function update($slug)</code>
+        <br>
+        <em>*No olvidar importar el FormRequest <code>use App\Http\Requests\CourseRequest;</code></em>
+        <br>
+        <em>*No olvidar importar el Helper <code>use App\Helpers\Helper;</code></em>
+      </li>
     </ul>
   </li>
-  <li>Edición del archivo de rutas <code>routes/web.php</code></li>
+  <li>Edición del FormRequest <code>app/Http/Requests/CourseRequest.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
