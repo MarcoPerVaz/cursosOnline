@@ -4,23 +4,28 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>Evento Eloquent para crear y actualizar requisitos y metas del curso</strong></h2>
+<h2>Commit - <strong>Desarrollando el listado de cursos</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
 <ol>
   <li>
-    Edición del modelo <code>app/Course.php</code>
+    Edición del controlador <code>app/Http/Controllers/TeacherController.php</code>
     <ul>
-      <li>Creación y edición de la función <code>public static function boot()</code></li>
+      <li>
+        Creación y edición de la función <code>public function courses()</code>
+        <br>
+        <em>*No olvidar importar el modelo <code>use App\Course;</code></em>
+      </li>
     </ul>
   </li>
   <li>
-    Edición del modelo <code>app/Requirement.php</code>
+    Creación de la carpeta <code>resources/views/teachers</code>
+    <ul>
+      <li>Creación y edición de la vista <code>resources/views/teachers/courses.blade.php</code></li>
+    </ul>
   </li>
-  <li>
-    Edición del modelo <code>app/Goal.php</code>
-  </li>
+  <li>Edición de la vista parcial <code>resources/views/partials/navigations/teacher.blade.php</code></li>
 </ol>
 <!-- End Commit instructions -->
 
