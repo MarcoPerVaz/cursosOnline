@@ -29,6 +29,7 @@
                 {{ $course->created_at->format('d/m/Y') }}
                 @include('partials.courses.rating', ['rating' => $course->custom_rating])
               </div>
+              @include('partials.courses.teacher_action_buttons')
             </div>
           </div>
         </div>
@@ -40,6 +41,9 @@
           </a>
         </div>
       @endforelse
+    </div>
+    <div class="row justify-content-center">
+      {{ $courses->links() }}
     </div>
   </div>  
 @endsection
