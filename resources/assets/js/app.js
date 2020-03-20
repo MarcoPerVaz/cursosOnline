@@ -17,6 +17,12 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 /*  */
+import {ServerTable} from 'vue-tables-2'
+Vue.use(ServerTable, {}, false, 'bootstrap4', 'default');
+
+import Courses from './components/Courses.vue'
+Vue.component('courses-list', Courses);
+
 import StripeForm from './components/StripeForm.vue'
 Vue.component('stripe-form', StripeForm);
 /*  */
