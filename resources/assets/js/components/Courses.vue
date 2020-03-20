@@ -99,8 +99,7 @@ export default {
     updateStatus(row, newStatus) {
       this.processing = true;
       setTimeout(() => { 
-        this.$http.post( /* this.$http.post Devuelve la petición HTTP post usando Vue Resource */
-          '/admin/courses/updateStatus',
+        this.$http.post('/admin/courses/updateStatus',
           {courseId: row.id, status: newStatus},
           {
             headers: {
