@@ -20,6 +20,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 import {ServerTable} from 'vue-tables-2'
 Vue.use(ServerTable, {}, false, 'bootstrap4', 'default');
 
+/* Vue Http Resource */
+import VueResource from 'vue-resource'
+Vue.use(VueResource);
+
 import Courses from './components/Courses.vue'
 Vue.component('courses-list', Courses);
 

@@ -1,9 +1,22 @@
 
 <template>
   <div>
-    <div class="alert alert-primary text-center" v-if="processing"><i class="fa fa-compass"></i>Procesando petición</div>
+    <div class="alert alert-primary text-center" v-if="processing">
+      <i class="fa fa-compass"></i>Procesando petición
+    </div>
 
     <v-server-table ref="table" :columns="columns" :url="url" :options="options">
+
+      <div slot="activate_deactivate" slot-scope="props">
+        <button v-if="parseInt(props.row.status) === 1" type="button" 
+            @click="updateStatus(props.row, 3)" class="btn btn-danger btn-block">
+            <i class="fa fa-ban"></i>{{ labels.reject }}
+        </button>
+        <button v-else type="button" 
+            @click="updateStatus(props.row, 1)" class="btn btn-success btn-block">
+            <i class="fa fa-rocket"></i>{{ labels.approve }}
+        </button>
+      </div>
       
       <div slot="status" slot-scope="props">
         {{ formattedStatus(props.row.status) }}
@@ -82,6 +95,27 @@ export default {
         'Rechazado'
       ];
       return statuses[status];
+    },
+    updateStatus(row, newStatus) {
+      this.processing = true;
+      setTimeout(() => { 
+        this.$http.post( /* this.$http.post Devuelve la petición HTTP post usando Vue Resource */
+          '/admin/courses/updateStatus',
+          {courseId: row.id, status: newStatus},
+          {
+            headers: {
+              'x-csrf-token': document.head.querySelector('meta[name=csrf-token]').content
+            }
+          }
+        ).then(response => {
+          this.$refs.table.refresh();
+        }).catch(error => {
+          /* Si se requiere hacer algo por si la petición falla */
+        }).finally(() => {
+          this.processing = false; /* El procesao ha finalizado haya ido bien o mal en la petición */
+        })
+        this.processing = false;
+      }, 1500);
     }
   }
 }
