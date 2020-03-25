@@ -22,7 +22,7 @@ class AdminController extends Controller
     {
        if (\request()->ajax()) {
             $vueTables = new EloquentVueTables;
-            $data = $vueTables->get(new Course, ['id', 'name', 'status'], ['reviews']);
+            $data = $vueTables->get(new Course, ['courses.id', 'name', 'status', 'teacher_id'], ['teacher']);
             return response()->json($data);
        }
        return abort(401);

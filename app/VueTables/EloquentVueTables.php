@@ -27,7 +27,11 @@ class EloquentVueTables implements VueTablesInterface
     $data->limit($limit)->skip($limit * ($page - 1));
     if (isset($orderBy)) {
       $direction = $ascending == 1 ? "ASC" : "DESC";
-      $data->orderBy($orderBy, $direction);
+      if ($orderBy === 'teacher') {
+        $data->join('teachers', 'courses.teacher_id', '=', 'teachers.id')->orderBy('teachers.title', $direction);
+      } else {
+        $data->orderBy($orderBy, $direction);
+      }
     }
 
     $results = $data->get()->toArray();

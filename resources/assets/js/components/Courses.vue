@@ -7,6 +7,10 @@
 
     <v-server-table ref="table" :columns="columns" :url="url" :options="options">
 
+      <div slot="teacher" slot-scope="props">
+          <p>{{ props.row.teacher.title }}</p>
+      </div>
+
       <div slot="activate_deactivate" slot-scope="props">
         <button v-if="parseInt(props.row.status) === 1" type="button" 
             @click="updateStatus(props.row, 3)" class="btn btn-danger btn-block">
@@ -55,7 +59,7 @@ export default {
       processing: false,
       status: null,
       url: this.route, /* Viene de la vista resources/views/admin/courses.blade.php */
-      columns: ['id', 'name', 'status', 'activate_deactivate'],
+      columns: ['id', 'teacher', 'name', 'status', 'activate_deactivate'],
       options: {
         filterByColumn: true,
         perPage: 10,
@@ -63,13 +67,14 @@ export default {
         headings: {
           id: 'ID',
           name: this.labels.name, /* Viene de la vista resources/views/admin/courses.blade.php */
+          teacher: this.labels.teacher, /* Viene de la vista resources/views/admin/courses.blade.php */
           status: this.labels.status, /* Viene de la vista resources/views/admin/courses.blade.php */
           activate_deactivate: this.labels.activate_deactivate, /* Viene de la vista resources/views/admin/courses.blade.php */
           approve: this.labels.approve, /* Viene de la vista resources/views/admin/courses.blade.php */
           reject: this.labels.reject, /* Viene de la vista resources/views/admin/courses.blade.php */
         },
         customFilters: ['status'],
-        sortable: ['id', 'name', 'status'],
+        sortable: ['id', 'teacher', 'name', 'status'],
         filterable: ['name'],
         requestFunction: function(data) { 
           return window.axios.get(this.url, { /* return window.axios.get Devuelve la petición HTTP get */

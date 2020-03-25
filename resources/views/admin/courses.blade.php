@@ -8,9 +8,10 @@
 @section('content')
   <div class="pl-5 pr-5">
     <courses-list :labels="{{ json_encode ([
-        'name'                  => __("Nombre"),
+        'name'                  => __("Nombre Curso"),
+        'teacher'               => __("Nombre Teacher"),
         'status'                => __("Estado"),
-        'activate_deactivate' => __("Activar / Desactivar"),
+        'activate_deactivate'   => __("Activar / Desactivar"),
         'approve'               => __("Aprobar"),
         'reject'                => __("Rechazar")
       ])}}" route="{{ route('admin.courses_json') }}">

@@ -60380,6 +60380,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60399,7 +60403,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       processing: false,
       status: null,
       url: this.route, /* Viene de la vista resources/views/admin/courses.blade.php */
-      columns: ['id', 'name', 'status', 'activate_deactivate'],
+      columns: ['id', 'teacher', 'name', 'status', 'activate_deactivate'],
       options: {
         filterByColumn: true,
         perPage: 10,
@@ -60407,13 +60411,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         headings: {
           id: 'ID',
           name: this.labels.name, /* Viene de la vista resources/views/admin/courses.blade.php */
+          teacher: this.labels.teacher, /* Viene de la vista resources/views/admin/courses.blade.php */
           status: this.labels.status, /* Viene de la vista resources/views/admin/courses.blade.php */
           activate_deactivate: this.labels.activate_deactivate, /* Viene de la vista resources/views/admin/courses.blade.php */
           approve: this.labels.approve, /* Viene de la vista resources/views/admin/courses.blade.php */
           reject: this.labels.reject /* Viene de la vista resources/views/admin/courses.blade.php */
         },
         customFilters: ['status'],
-        sortable: ['id', 'name', 'status'],
+        sortable: ['id', 'teacher', 'name', 'status'],
         filterable: ['name'],
         requestFunction: function requestFunction(data) {
           return window.axios.get(this.url, { /* return window.axios.get Devuelve la petición HTTP get */
@@ -60482,6 +60487,14 @@ var render = function() {
           attrs: { columns: _vm.columns, url: _vm.url, options: _vm.options },
           scopedSlots: _vm._u([
             {
+              key: "teacher",
+              fn: function(props) {
+                return _c("div", {}, [
+                  _c("p", [_vm._v(_vm._s(props.row.teacher.title))])
+                ])
+              }
+            },
+            {
               key: "activate_deactivate",
               fn: function(props) {
                 return _c("div", {}, [
@@ -60536,6 +60549,7 @@ var render = function() {
           ])
         },
         [
+          _vm._v(" "),
           _vm._v(" "),
           _vm._v(" "),
           _c(
