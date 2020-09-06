@@ -27,6 +27,9 @@ Vue.use(VueResource);
 import Courses from './components/Courses.vue'
 Vue.component('courses-list', Courses);
 
+import Students from './components/Students.vue'
+Vue.component('students-list', Students);
+
 import StripeForm from './components/StripeForm.vue'
 Vue.component('stripe-form', StripeForm);
 /*  */

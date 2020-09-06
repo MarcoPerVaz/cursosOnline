@@ -94,6 +94,7 @@ class User extends Authenticatable
         public function role()
         {
             return $this->belongsTo(Role::class);
+            // return $this->where("role_id", "!=", 1)->get();
         }
 
         public function student()

@@ -8,6 +8,7 @@ use App\VueTables\EloquentVueTables;
 use App\Course;
 use App\Mail\CourseApproved;
 use App\Mail\CourseRejected;
+use App\User;
 /*  */
 
 class AdminController extends Controller
@@ -50,6 +51,30 @@ class AdminController extends Controller
                 $course->save();
                 return response()->json(['msg' => 'ok']);
             }
+        }
+        return abort(401);
+    }
+
+    public function students(User $user)
+    {
+        // $roles = User::where("role_id", "!=", 1)->get();
+        // foreach($roles as $role)
+        // {
+        //     echo($role->name . "<br>");
+        // }
+        // dd($roles);
+
+        return view('admin.students');
+    }
+
+    public function studentsJson()
+    {
+        // $roles = User::where("role_id", "!=", 1)->get();
+
+        if (\request()->ajax()) {
+            $vueTables = new EloquentVueTables;
+            $data = $vueTables->get(new User, ['id', 'name', 'email', 'role_id'], ['role']);
+            return response()->json($data);
         }
         return abort(401);
     }

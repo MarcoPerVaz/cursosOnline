@@ -4,9 +4,7 @@
 <!-- End Title -->
 
 <!-- Commit name -->
-<h2>Commit - <strong>VueTables2 con relaciones utilizando ordenación</strong></h2>
-<br>
-<em>*Se agrega teacher a la tabla con VueTables2, con su ordenación</em>
+<h2>Commit - <strong>*Administrar estudiantes desde el admin</strong></h2>
 <!-- End Commit name -->
 
 <!-- Commit instructions -->
@@ -14,17 +12,18 @@
   <li>
     Edición del controlador <code>app/Http/Controllers/AdminController.php</code>
     <ul>
-      <li>Edición de la función <code>coursesJson()</code></li>
+      <li>Creación y edición de la función <code>students()</code></li>
+      <li>
+        Creación y edición de la función <code>studentsJson()</code>
+        <br>
+        <em>*No olvidar importar el modelo <code>use App/User;</code></em>
+      </li>
     </ul>
   </li>
-  <li>Edición del componente <code>resources/assets/js/components/Courses.vue</code></li>
-  <li>
-    Edición del archivo <code>app/VueTables/EloquentVueTables.php</code>
-      <ul>
-        <li>Edición de la función <code>get($model, array $fields, array $relations = [])</code></li>
-      </ul>
-  </li>
-  <li>Edición de la vista <code>resources/views/admin/courses.blade.php</code></li>
+  <li>Edición de la vista parcial <code>resources/views/partials/navigations/admin.blade.php</code></li>
+  <li>Creación y edición de la vista <code>resources/views/admin/students.blade.php</code></li>
+  <li>Creación y edición del componente <code>resources/assets/js/components/Students.vue</code></li>
+  <li>Edición del archivo <code>resources/assets/js/app.js</code></li>
 </ol>
 <!-- End Commit instructions -->
 
